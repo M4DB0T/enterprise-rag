@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Enterprise RAG</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">AI Engineering Portfolio</p>
+        <h1>Enterprise RAG</h1>
+      </div>
+      <a class="docs-link" href="/docs">API Docs</a>
+    </header>
+
+    <main class="layout">
+      <section class="card ask-card">
+        <div class="card-header">
+          <div>
+            <p class="eyebrow">Question Answering</p>
+            <h2>Ask the document index</h2>
+          </div>
+          <span id="askStatus" class="status">Ready</span>
+        </div>
+
+        <form id="askForm" class="stack">
+          <label for="questionInput">Question</label>
+          <textarea id="questionInput" name="question" rows="4" placeholder="Ask a question about your uploaded documents..." required></textarea>
+          <button type="submit">Ask Hybrid RAG</button>
+        </form>
+
+        <div class="answer-panel">
+          <h3>Answer</h3>
+          <p id="answerText" class="muted">Answers will appear here after you ask a question.</p>
+        </div>
+
+        <div>
+          <h3>Sources</h3>
+          <div id="sourcesList" class="list empty">No sources yet.</div>
+        </div>
+      </section>
+
+      <aside class="side-column">
+        <section class="card">
+          <div class="card-header">
+            <div>
+              <p class="eyebrow">Ingestion</p>
+              <h2>Upload PDF</h2>
+            </div>
+            <span id="uploadStatus" class="status">Idle</span>
+          </div>
+
+          <form id="uploadForm" class="stack">
+            <label for="pdfInput">PDF file</label>
+            <input id="pdfInput" name="file" type="file" accept="application/pdf" required>
+            <button type="submit">Upload and Index</button>
+          </form>
+          <p id="uploadMessage" class="message muted">Uploaded PDFs stay local and are ignored by git.</p>
+        </section>
+
+        <section class="card">
+          <div class="card-header">
+            <div>
+              <p class="eyebrow">Corpus</p>
+              <h2>Documents</h2>
+            </div>
+            <button id="refreshDocuments" class="secondary" type="button">Refresh</button>
+          </div>
+          <div id="documentsList" class="list empty">Loading documents...</div>
+        </section>
+
+        <section class="card">
+          <div class="card-header">
+            <div>
+              <p class="eyebrow">Quality</p>
+              <h2>Feedback</h2>
+            </div>
+            <span id="feedbackStatus" class="status">Optional</span>
+          </div>
+
+          <form id="feedbackForm" class="stack">
+            <label for="ratingInput">Rating</label>
+            <select id="ratingInput" name="rating" required>
+              <option value="positive">Positive</option>
+              <option value="neutral">Neutral</option>
+              <option value="negative">Negative</option>
+            </select>
+            <label for="commentInput">Comment</label>
+            <textarea id="commentInput" name="comment" rows="3" placeholder="What worked or what should improve?"></textarea>
+            <button type="submit">Save Feedback</button>
+          </form>
+        </section>
+      </aside>
+
+      <section class="card logs-card">
+        <div class="card-header">
+          <div>
+            <p class="eyebrow">Observability</p>
+            <h2>Recent Logs</h2>
+          </div>
+          <button id="refreshLogs" class="secondary" type="button">Refresh</button>
+        </div>
+        <div id="logsList" class="list empty">Loading logs...</div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
