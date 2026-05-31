@@ -1,0 +1,4 @@
+# TODO: Replace with project-specific settings.
+app:
+  name: enterprise-rag
+  environment: local

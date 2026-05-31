@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv
+python-multipart
+openai
+httpx
+pypdf
+langchain-text-splitters
+sentence-transformers
+chromadb
+rank-bm25
+pytest

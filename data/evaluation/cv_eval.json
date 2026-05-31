@@ -1,0 +1,14 @@
+[
+    {
+        "question": "What is retrieval augmented generation?",
+        "expected_answer": "A technique that retrieves relevant context before generating an answer."
+    },
+    {
+        "question": "What is a vector database used for in RAG?",
+        "expected_answer": "Storing and searching embedded document chunks."
+    },
+    {
+        "question": "Why is reranking useful?",
+        "expected_answer": "It improves the ordering of retrieved chunks before generation."
+    }
+]
